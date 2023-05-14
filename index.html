@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./content/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>Document</title>
+</head>
+<body class="bg-[url('unsplash.jpg')] bg-cover" x-data="{ openMenu : false }"
+        :class="openMenu ? 'overflow-hidden' : 'overflow-visible' ">
+        <div class="">
+            <p class="text-center bg-orange-100 text-yellow-800 text-xs pb-2 lg:text-sm w-full h-auto pt-1">Darling,recommandez un ami pour
+                beneflcire d'une reduction de 20$ sir votre prochaine command de plus de 100$ !</p>
+        </div>
+        
+           <div class="flex">
+            <!-- Mobile Menu Toggle -->
+            <button class="flex mt-8 ml-2 lg:hidden flex-col items-center align-middle" @click="openMenu = !openMenu"
+                :aria-expanded="openMenu" aria-controls="mobile-navigation" aria-label="Navigation Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            
+            </button>
+            <div class="mx-auto">
+                <p class="text-center text-4xl mt-5 ">Charlotte Tilbury</p>
+            </div>
+            
+            
+            <!-- Pop Out Navigation -->
+            <nav id="mobile-navigation" class="fixed top-0 right-0 bottom-0 left-0 backdrop-blur-sm z-10"
+                :class="openMenu ? 'visible' : 'invisible' " x-cloak>
+            
+                <!-- UL Links -->
+                <ul class="absolute top-0 right-0 bottom-0 w-10/12 py-4 bg-white drop-shadow-2xl z-10 transition-all"
+                    :class="openMenu ? 'translate-x-0' : 'translate-x-full'">
+            
+                    <li class="border-b border-inherit">
+                        <a href="#" class="block p-4" aria-current="true">MAGIC BODY CREAM</a>
+                    </li>
+                    <li class="border-b border-inherit">
+                        <a href="#" class="block p-4">NOUVEATES</a>
+                    </li>
+                    <li class="border-b border-inherit">
+                        <a href="#" class="block p-4">SOIN</a>
+                    </li>
+                    <li class="border-b border-inherit">
+                        <a href="#" class="block p-4">MAQUILAG</a>
+                    </li>
+                    <li class="border-b border-inherit">
+                        <a href="#" class="block p-4">MEILLEURES VENTES</a>
+                    </li>
+                    <li class="border-b border-inherit">
+                        <a href="#" class="block p-4">CADEAUX</a>
+                    </li>
+            
+                </ul>
+            
+                <!-- Close Button -->
+                <button class="absolute top-0 right-0 bottom-0 left-0" @click="openMenu = !openMenu" :aria-expanded="openMenu"
+                    aria-controls="mobile-navigation" aria-label="Close Navigation Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute top-2 left-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            
+            </nav>
+           </div>
+  
+    
+    <div class="mt-5 justify-content-center justify-center align-content-center align-items-center gap-5 max-lg:space-x-12 pl-3 pr-3 text-sm lg:flex hidden">
+        <!-- <ul class=""> -->
+            <a>MAGIC BODY CREAM</a>
+            <a>NOUVEATES</a>
+            <a>SOIN</a>
+            <a>MAQUILAGE</a>
+            <a>MEILLEURES VENTES</a>
+            <a>CADEAUX</a>
+            <a>SERVICES VIRTUELS</a>
+            
+            <button class="flex" type="button" data-dropdown-toggle="dropdown">LE MONDE DE CHARLOTTE <svg class="w-4 h-4 m-1"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg></button>
+            
+            <!-- Dropdown menu -->
+            <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4 w-[100%] h-auto p-5"
+                id="dropdown">
+                <!-- <div class="px-4 py-3 w-[600px]">
+                                    <span class="block text-sm">new toys</span>
+                                    <span class="block text-sm font-medium text-gray-900 truncate">shop All</span>
+                                </div> -->
+                <div class="flex">
+                <div class="flex mx-auto mt-5 mb-5 gap-12">
+                    <div>
+                        <img src="./content/img/60.webp" class="w-[100px] h-[100px]" alt="">
+                        <p class="text-xs mt-5">A PROPOS DE</p>
+                        <P class="text-xs">CHARLOTTE TILBURY</P>
+                    </div>
+                    <div>
+                        <img src="./content/img/59.webp" class="w-[100px] h-[100px]" alt="">
+                        <p class="text-xs mt-5">A PROPOS DE</p>
+                        <P class="text-xs">CHARLOTTE TILBURY</P>
+                    </div>
+                    <div>
+                        <img src="./content/img/58.webp" class="w-[100px] h-[100px]" alt="">
+                        <p class="text-xs mt-5">A PROPOS DE</p>
+                        <P class="text-xs">CHARLOTTE TILBURY</P>
+                    </div>
+                    <div>
+                        <img src="./content/img/57.webp" class="w-[100px] h-[100px]" alt="">
+                        <p class="text-xs mt-5">A PROPOS DE</p>
+                        <P class="text-xs">CHARLOTTE TILBURY</P>
+                    </div>
+                    <div>
+                        <img src="./content/img/55.webp" class="w-[100px] h-[100px]" alt="">
+                        <p class="text-xs mt-5">A PROPOS DE</p>
+                        <P class="text-xs">CHARLOTTE TILBURY</P>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            
+            <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+
+           
+        <!-- </ul> -->
+    </div>
+    <div>
+        <img class="w-full mt-5" src="./content/img/1.webp" alt="">
+    </div>
+    <div class="grid lg:grid-cols-4 gap-5 mt-12 lg:mx-24 mx-5 md:grid-cols-4 grid-cols-2">
+       <div>
+        <img src="./content/img/2.webp" alt="">
+        <p class="pt-5 text-xs text-center">DES CADEAUX MAGIQUES POUR VOUS !*</p>
+       </div>
+       <div><img src="./content/img/3.webp" alt="">
+       <P class="pt-5 text-xs text-center">CHARLOTTE'S MAGIC CREAM</P></div>
+       <div>
+        <img src="./content/img/4.webp" alt="">
+        <P class="pt-5 text-xs text-center">-20% BEAUTIFUL SKIN COMPLEXIOX KIT</P>
+       </div>
+      <div>
+        <img src="./content/img/5.webp" alt="">
+        <P class="pt-5 text-xs text-center">BEAUTY LIGHT WANDS</P>
+      </div>
+    </div>
+
+
+    <p class="text-center font-bold text-2xl mt-24 ">RECOMMENDED FOR YOU</p>
+    <p class="text-center">BASED ON PRODUCTS YOU’VE VIEWED</p>
+    <div class="swiper mySwiper bg-gray-50 pb-5">
+        <!-- <div class="swiper-button-next hidden lg:block md:block sm:block"></div>
+        <div class="swiper-button-prev hidden lg:block md:block sm:block"></div> -->
+        <div class="swiper-wrapper mt-5">
+            <div class="swiper-slide">
+                <div class="bg-white">
+                    <img src="./content/img/10.webp" alt="">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO BAG</button>
+                </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/11.webp" alt="">
+               <div class="bg-white">
+                <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                <p class="mt-12 ml-5">$34.00</p>
+                <div class="flex flex-col items-center justify-center mt-5">
+                    <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                        BAG</button>
+                </div>
+               </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/12.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/13.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/14.webp" alt="">
+               <div class="bg-white">
+                <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                <p class="mt-12 ml-5">$34.00</p>
+                <div class="flex flex-col items-center justify-center mt-5">
+                    <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                        BAG</button>
+                </div>
+               </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/15.webp" alt="">
+               <div class="bg-white">
+                <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                <p class="mt-12 ml-5">$34.00</p>
+                <div class="flex flex-col items-center justify-center mt-5">
+                    <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                        BAG</button>
+                </div>
+               </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/16.webp" alt="">
+               <div class="bg-white">
+                <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                <p class="mt-12 ml-5">$34.00</p>
+                <div class="flex flex-col items-center justify-center mt-5">
+                    <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                        BAG</button>
+                </div>
+               </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/17.webp" alt="">
+              <div class="bg-white">
+                <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                <p class="mt-12 ml-5">$34.00</p>
+                <div class="flex flex-col items-center justify-center mt-5">
+                    <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5 ">ADD TO
+                        BAG</button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/18.webp" alt="">
+               <div class="bg-white">
+                <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                <p class="mt-12 ml-5">$34.00</p>
+                <div class="flex flex-col items-center justify-center mt-5">
+                    <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                        BAG</button>
+                </div>
+               </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/19.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/20.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/21.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/22.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
+    
+    <div class="mt-12 hidden md:block">
+        <video class="ResponsiveVideoComponent__item ResponsiveVideoComponent__item--sm" autoplay="" playsinline="" muted=""
+            loop="" title="FR HPhero-MagicCream-dt-UK-1.1"
+            aria-describedby="video-description-fr-h-phero-magic-cream-dt-uk-1-1-sm" preload="metadata">
+            <source
+                src="//videos.ctfassets.net/wlke2cbybljx/6VWEzMhEXjyiGjPwPaOPOr/beeec993c326dc6db275ce0c908fa2fb/FR_HPhero-MagicCream-dt-UK-1.1.mp4">
+        </video>
+    </div>
+    <img class="md:hidden mt-12 HeroBanner__image" alt="Charlotte's Iconic and award-winning glow booster. Shop now."
+        title="Hollywood Flawless Filter" loading="lazy"
+        src="//images.ctfassets.net/wlke2cbybljx/11h0beEimdgEMme4mGOOvu/6f064eeab4e7cf808ca91ad540d57cb8/HFF_BIS_MB.gif">
+        
+      
+      
+
+    <div class="mt-12 flex grid lg:grid-cols-4 gap-5 lg:mx-24 mx-5 md:grid-cols-4 grid-cols-2">
+        <div>
+            <img src="./content/img/6.webp" alt="">
+            <p class="text-center text-xs pt-5">MEILLEURES VENTES</p>
+        </div>
+        <div>
+            <img src="./content/img/7.webp" alt="">
+            <p class="text-center text-xs pt-5">VOIR TOUS LES SOINS DU VISAGE</p>
+        </div>
+        <div>
+            <img src="./content/img/8.webp" alt="">
+            <p class="text-center text-xs pt-5">VOIR LA COLLECTION PILLOW TALK</p>
+        </div>
+        <div>
+            <img src="./content/img/9.webp" alt="">
+            <p class="text-center text-xs pt-5">EXCLUSIVITES EN LIGNE</p>
+        </div>
+    </div>
+
+    <!-- <div>
+        <p class="text-center font-bold mt-24 text-2xl">DÉCOUVREZ LES SOINS DU VISAGE</p>
+    </div> -->
+
+    <p class="text-center font-bold text-2xl mt-24">DISCOVER SKINCARE</p>
+    <div class="swiper mySwiper bg-gray-50 pb-5">
+        <!-- <div class="swiper-button-next hidden lg:block md:block sm:block"></div>
+            <div class="swiper-button-prev hidden lg:block md:block sm:block"></div> -->
+        <div class="swiper-wrapper mt-5">
+            <div class="swiper-slide">
+                <img src="./content/img/22.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/23.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/24.webp" alt="">
+               <div class="bg-white">
+                <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                <p class="mt-12 ml-5">$34.00</p>
+                <div class="flex flex-col items-center justify-center mt-5">
+                    <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                        BAG</button>
+                </div>
+               </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/25.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/26.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/27.webp" alt="">
+               <div class="bg-white">
+                <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                <p class="mt-12 ml-5">$34.00</p>
+                <div class="flex flex-col items-center justify-center mt-5">
+                    <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                        BAG</button>
+                </div>
+               </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/28.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/29.webp" alt="">
+               <div class="bg-white">
+                <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                <p class="mt-12 ml-5">$34.00</p>
+                <div class="flex flex-col items-center justify-center mt-5">
+                    <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                        BAG</button>
+                </div>
+               </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/30.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/31.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/32.webp" alt="">
+               <div class="bg-white">
+                <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                <p class="mt-12 ml-5">$34.00</p>
+                <div class="flex flex-col items-center justify-center mt-5">
+                    <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                        BAG</button>
+                </div>
+               </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/33.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./content/img/34.webp" alt="">
+                <div class="bg-white">
+                    <p class="pl-5 pt-5 text-sm">K.I.S.S.I.N.G</p>
+                    <p class="pl-5 pt-2 text-xs text-gray-400">ISLAND DREAME</p>
+                    <p class="mt-12 ml-5">$34.00</p>
+                    <div class="flex flex-col items-center justify-center mt-5">
+                        <button class="text-center border border-gray-600 w-[90%] h-[40px] hover:bg-yellow-950 hover:text-gray-100 mb-5">ADD TO
+                            BAG</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
+   <div class="mt-32 command">
+    <div>
+        <p class="text-center text-xl mt-1">FOLLOW CHARLOTTE ON</p>
+        <p class="text-center text-xl mt-1">INSTAGRAM</p>
+        <p class="text-center text-xl mt-1">@CHARLOTTETILBURY</p>
+        <p class="text-center text-sm mt-2 underline">View More</p>
+    </div>
+   </div>
+    <div class="swiper mySwiper3 mt-12 mx-12">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide container">
+                <img src="./content/img/35.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Shop Now</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/36.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Shop Now</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/37.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Shop Now</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/38.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Shop Now</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/39.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Shop Now</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/40.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Shop Now</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/41.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Shop Now</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/42.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Shop Now</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/43.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Shop Now</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/44.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Shop Now</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/45.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Shop Now</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/46.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Shop Now</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/47.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Fade</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/48.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Fade</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/49.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Shop Now</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/50.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Fade</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/51.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Shop Now</div>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="./content/img/52.webp" alt="">
+                <div class="overlay overlayFade">
+                    <div class="text">Fade</div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next text-gray-800"></div>
+        <div class="swiper-button-prev text-gray-800"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    
+
+
+    <div class="shadow1">
+    <div class="flex gap-3 justify-center items-center mt-20 bg-white py-5">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSIjMzQwQzBDIiBmaWxsLXJ1bGU9Im5vbnplcm8iPgogICAgPHBhdGgKICAgICAgZD0iTTE2LjE0NSAxMC43Njh2LTYuMjFhMi44OTEgMi44OTEgMCAwIDAtMi44OTYtMi44ODZINy4wMjNhMi44OTEgMi44OTEgMCAwIDAtMi44OTYgMi44ODZ2Ni4yMWEyLjg5MSAyLjg5MSAwIDAgMCAyLjg5NiAyLjg4Nmg2LjIyNmMxLjYgMCAyLjg5Ni0xLjI5MyAyLjg5Ni0yLjg4NnptMSAwYTMuODkxIDMuODkxIDAgMCAxLTMuODk2IDMuODg2SDcuMDIzYTMuODkxIDMuODkxIDAgMCAxLTMuODk2LTMuODg2di02LjIxQTMuODkxIDMuODkxIDAgMCAxIDcuMDIzLjY3Mmg2LjIyNmEzLjg5MSAzLjg5MSAwIDAgMSAzLjg5NiAzLjg4NnY2LjIxeiIvPgogICAgPHBhdGgKICAgICAgZD0iTTEzLjA0NSA3LjY2M2MwLTEuNjAyLTEuMzAyLTIuOS0yLjkxLTIuOWEyLjkwNCAyLjkwNCAwIDAgMC0yLjkwOSAyLjljMCAxLjYwMiAxLjMwMiAyLjkgMi45MSAyLjlhMi45MDQgMi45MDQgMCAwIDAgMi45MS0yLjl6bTEgMGMwIDIuMTU1LTEuNzUgMy45LTMuOTEgMy45YTMuOTA0IDMuOTA0IDAgMCAxLTMuOTA5LTMuOWMwLTIuMTU1IDEuNzUtMy45IDMuOTEtMy45YTMuOTA0IDMuOTA0IDAgMCAxIDMuOTEgMy45ek0xMy42NjUgMy4zMzZhLjE5LjE5IDAgMSAwIC4zOCAwIC4xOS4xOSAwIDEgMC0uMzggMHptMSAwYS44MS44MSAwIDEgMS0xLjYyLS4wMDEuODEuODEgMCAwIDEgMS42MiAweiIvPgogIDwvZz4KPC9zdmc+Cg=="
+            class="Icon svg SocialMedia__image Icon--instagram" alt="Our Instagram" width="24" height="19"
+            aria-label="Our Instagram">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSIjMzQwQzBDIiBmaWxsLXJ1bGU9Im5vbnplcm8iPgogICAgPHBhdGgKICAgICAgZD0iTTYuOTgzIDQuNzg2YS41LjUgMCAwIDEgLjc2NS0uNDI0bDUuMDM0IDMuMTQ2YS41LjUgMCAwIDEgMCAuODQ4bC01LjAzNCAzLjE0NmEuNS41IDAgMCAxLS43NjUtLjQyNFY0Ljc4NnptMSAuOTAydjQuNDg3bDMuNTktMi4yNDMtMy41OS0yLjI0NHoiLz4KICAgIDxwYXRoCiAgICAgIGQ9Ik0yLjIyOSA0LjU0djYuNzgzYzAgLjgwMi42MTkgMS40ODQgMS40NSAxLjU4NWwxLjM2Ni4xNjZhNDEuMTAzIDQxLjEwMyAwIDAgMCA5LjkxIDBsMS4zNjYtLjE2NmMuODMyLS4xMDEgMS40NS0uNzgyIDEuNDUtMS41ODVWNC41NGMwLS44MDMtLjYxOC0xLjQ4NC0xLjQ1LTEuNTg1bC0xLjM2Ni0uMTY2YTQxLjEwMyA0MS4xMDMgMCAwIDAtOS45MSAwbC0xLjM2Ni4xNjZjLS44MzEuMTAxLTEuNDUuNzgzLTEuNDUgMS41ODV6bTEuMzMtMi41NzhsMS4zNjUtLjE2NmE0Mi4xMDMgNDIuMTAzIDAgMCAxIDEwLjE1MSAwbDEuMzY2LjE2NmMxLjMyOS4xNjIgMi4zMyAxLjI2NCAyLjMzIDIuNTc4djYuNzgzYzAgMS4zMTQtMS4wMDEgMi40MTYtMi4zMyAyLjU3OGwtMS4zNjUuMTY2YTQyLjEwMyA0Mi4xMDMgMCAwIDEtMTAuMTUyIDBsLTEuMzY2LS4xNjZjLTEuMzI4LS4xNjItMi4zMy0xLjI2NS0yLjMzLTIuNTc4VjQuNTRjMC0xLjMxMyAxLjAwMi0yLjQxNiAyLjMzLTIuNTc4eiIvPgogIDwvZz4KPC9zdmc+Cg=="
+            class="Icon svg SocialMedia__image Icon--youtube" alt="Our YouTube" width="24" height="19"
+            aria-label="Our YouTube">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aAogICAgZD0iTTQuODU1IDYuNjY0YS41LjUgMCAwIDEtLjE1NS45MjFjLS4zMDIuMDYxLS42MjMuMDE2LS45NDktLjExLjE1LjM0LjM3NC42NDYuNjYuOTE3LjQxNC4zOTEuOTQyLjY3MSAxLjE4My42OThhLjUuNSAwIDAgMSAuMjcuODc3Yy0uMjM5LjIwNC0uNTEuMy0uODM2LjMxMS41Ni42IDEuMzIyLjk3MiAyLjA4My45OWEuNS41IDAgMCAxIC4zMjUuODdjLS42Ni41OTktMS41ODEgMS4wMzUtMi41OCAxLjI1NWE4Ljc2MSA4Ljc2MSAwIDAgMCAyLjU1NS4zNjZjNC40Ny0uMDA0IDguMTQ4LTQuMzQgNy42OTktOC4zNWEuNS41IDAgMCAxIC4yMi0uNDcxYy4wODUtLjA1Ny4xNzYtLjEyNS4yNy0uMmExLjk3NyAxLjk3NyAwIDAgMS0uMTY4LjAwOGMtLjU1MS4wMDMtLjctLjc1OC0uMTktLjk2NGEuNDgzLjQ4MyAwIDAgMCAuMDMzLS4wMTRjLS4xMy4wMzUtLjI1MS4wNjItLjM1NC4wNzdhLjUuNSAwIDAgMS0uNDE3LS4xMzNjLS41OS0uNTYzLTEuMTE1LS43OS0xLjc4Mi0uNzktLjQ4NyAwLS45MjcuMTQ0LTEuNDcxLjQ2Ni0uODAyLjQ3NS0xLjA3NCAxLjc0NC0uODU0IDIuNjU2YS41LjUgMCAwIDEtLjUxMy42MTZjLTIuNDM4LS4xMy00LjU3NS0xLjE1LTYuMDU4LTIuNjczLS4yMzkgMS4wODMuMjggMi4yMzYgMS4wMyAyLjY3N3ptLTEuNjIzLTMuODdhLjUuNSAwIDAgMSAuODI0LS4wNThjMS4xOTMgMS41MTEgMy4wNjcgMi41OTkgNS4yNyAyLjg3MS0uMDY2LTEuMTYxLjM2NC0yLjQ1NyAxLjQxNi0zLjA4LjY4Ny0uNDA2IDEuMjk1LS42MDQgMS45OC0uNjA0Ljg1NCAwIDEuNTY5LjI3NyAyLjI3NC44ODUuNDc2LS4xMjUgMS4yMjItLjQzIDEuNDIyLS41NzNhLjUuNSAwIDAgMSAuNzczLjUzNGMtLjA1LjE5LS4xMzQuMzktLjI0Mi41OS40MjMtLjEzNi44MjIuMzM5LjU3Ljc0My0uMzMzLjUzMy0uODkxIDEuMTA3LTEuMzg5IDEuNDkuMzEyIDQuNTAzLTMuNzQ4IDkuMTYyLTguNzE4IDkuMTY3YTkuNzIzIDkuNzIzIDAgMCAxLTQuOTMyLTEuMzExYy0uNDc0LS4yNy0uMjM2LS45OTUuMzA1LS45MzJhNS43MiA1LjcyIDAgMCAwIDMuMDQ3LS41MDZBNC4yNjUgNC4yNjUgMCAwIDEgMy41MiA5Ljc5YS40OTkuNDk5IDAgMCAxIC4yMTQtLjY0MWMtLjY4LS42NjUtMS4xOTUtMS42MjUtMS4xOTUtMi42OWEuNS41IDAgMCAxIC41MS0uNTAyQzIuNjUzIDUgMi42MyAzLjgyMSAzLjIzMiAyLjc5M3oiCiAgICBmaWxsPSIjMzQwQzBDIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz4KPC9zdmc+Cg=="
+            class="Icon svg SocialMedia__image Icon--twitter" alt="Our Twitter" width="24" height="19"
+            aria-label="Our Twitter">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aAogICAgZD0iTTguNDU3IDcuODQ2SDcuMTczVjUuNzAzaDEuMjJjLS4wODgtMS4xMzYuMTgzLTIuMDAyLjg0NS0yLjU2Ljc2NS0uNjQ2IDEuODU5LS43MjUgMy4yMzctLjI5OGwuNDczLjE0Ny0uNzYzIDIuNTU4LS41MjEtLjIzNWMtLjM4My0uMTczLS41OS0uMTczLS42OTMtLjA4Mi0uMDgzLjA3NC0uMTM4LjIyNy0uMTQ2LjQ3aDEuMTY0djIuMTQzaC0xLjEzMnY1LjY0aC0yLjR2LTUuNjR6IgogICAgc3Ryb2tlPSIjMzQwQzBDIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4KPC9zdmc+Cg=="
+            class="Icon svg SocialMedia__image Icon--facebook" alt="Our Facebook" width="24" height="19"
+            aria-label="Our Facebook">
+        <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNSAyMCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMzNDBDMEM7fTwvc3R5bGU+PC9kZWZzPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE1LjU2OTc3LDEuMDMwMTNBNS40OTE0Nyw1LjQ5MTQ3LDAsMCwwLDIwLjIwODIsNS43MDcyNFY3LjE5MDVhNi4zOTQ2OSw2LjM5NDY5LDAsMCwxLTMuMDU0NDQtMS4yMzU4TDE1LjQ3ODY1LDQuNDIxODFWNi42OTI0M2wuMDAwODQsNi43NjE4M2MuMDAzLjA3NDM5LjAwNTM0LjE0OTIyLjAwNTM0LjIyNDQxYTUuMzUxOTMsNS4zNTE5MywwLDAsMS01LjM0MzEzLDUuMzUxNDVxLS4xMjkyNywwLS4yNTk3MS0uMDA2MjlhNS4zNTE4NSw1LjM1MTg1LDAsMCwxLC4wNy0xMC42OTQ2NHYxLjU0OWEzLjgwMzc0LDMuODAzNzQsMCwwLDAtLjQ5OTI0LDcuNTQxMjcsMy45NDk1MywzLjk0OTUzLDAsMCwwLC42ODM2Mi4wNjAyMSwzLjgwNzkzLDMuODA3OTMsMCwwLDAsMy44MDI4OS0zLjgwMVYxLjAzMDEzaDEuNjMwNTZtLjkwNjg0LTFoLTMuNTM3NFYxMy42Nzg3NGEyLjgwMywyLjgwMywwLDAsMS0yLjgwMjg5LDIuODAxLDIuOTM0ODgsMi45MzQ4OCwwLDAsMS0uNTEtLjA0NSwyLjgwMzc1LDIuODAzNzUsMCwwLDEsLjUwOTkzLTUuNTYwODhoLjAwMmEyLjgwMywyLjgwMywwLDAsMSwuODEzNjkuMTIxMzJ2LTMuNjE1YTYuNDIxNDUsNi40MjE0NSwwLDAsMC0uODI2MjYtLjA1MzY0LDYuMzUxNzUsNi4zNTE3NSwwLDAsMC02LjMwMTIyLDUuNjIzMzUsNi40OTcsNi40OTcsMCwwLDAsNi4wMDkxOSw3LjA3Mjg5cS4xNTQ1Ni4wMDc0OS4zMDguMDA3NDZhNi4zNTIsNi4zNTIsMCwwLDAsNi4zNDMxMy02LjM1MTM4YzAtLjA4OS0uMDAyNTctLjE3NzQzLS4wMDYxOC0uMjY1MzhWNi42OTI0M0MxOC4xMDg1LDguMTgzOTEsMjEuMjA4Miw4LjMxMSwyMS4yMDgyLDguMzExVjQuODA2NDhhNC42NzkxOCw0LjY3OTE4LDAsMCwxLTQuNzMxNTktNC43NDdWLjAzMDEzWiIvPjwvc3ZnPg=="
+            class="Icon svg SocialMedia__image Icon--tiktok" alt="Our TikTok" width="24" height="19"
+            aria-label="Our TikTok">
+        <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNSAyMCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMzNDBDMEM7fTwvc3R5bGU+PC9kZWZzPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIwLjM2MjcsNS4wMzQ2MWE2LjQ1Myw2LjQ1MywwLDAsMC0xLjQ4ODc2LTIuNjM1QTcuMTUwNTMsNy4xNTA1MywwLDAsMCwxNi40NzAxNy43MDA5M2E3LjkxMTc0LDcuOTExNzQsMCwwLDAtMy40NzY1LS42MzhjLS40My4wMTk2Ny0uODQ5OTIuMDQyMjgtMS4yNjE2Ny4xMDE4N0E4LjUwNjMzLDguNTA2MzMsMCwwLDAsOC42MDk1NywxLjIyMTk0LDcuMzI3NTMsNy4zMjc1MywwLDAsMCw1LjgyMjkyLDQuMDM5MzhhOS45MTIzOSw5LjkxMjM5LDAsMCwwLS44MDksMi4zODkzM0E2LjQ2MzI0LDYuNDYzMjQsMCwwLDAsNS4zMjg2LDkuNTA1MzhhNC4xNTMxNyw0LjE1MzE3LDAsMCwwLDEuNjAwNTYsMi4wODMxNiwxLjk5NTE4LDEuOTk1MTgsMCwwLDAsLjg2OS4zNzE0M2MuNjI5MS0uMDEyMDkuNzU0MTUtLjYxMzcxLjgxNDE0LS45MDI5My4wMTEyOC0uMDU0NTMuMDIyMTctLjEwODY1LjAzNTQyLS4xNTkzMS4wMTE2OC0uMDQ0OC4wMjY4OC0uMDkyNy4wNDIwOC0uMTQyNTZBMS4yNjg0MiwxLjI2ODQyLDAsMCwwLDguNjk4NzcsOS43MjZhMS45NzYzNSwxLjk3NjM1LDAsMCwwLS4yNDM0NC0uMzIxNzMsMS40NjE2LDEuNDYxNiwwLDAsMS0uMTIwMzgtLjE0NzQ3QTIuODk2ODUsMi44OTY4NSwwLDAsMSw3Ljg4NTQ3LDcuNjA5LDQuODU0MzcsNC44NTQzNywwLDAsMSw4LjQ3Niw1LjI0NjQ5LDQuNjY5LDQuNjY5LDAsMCwxLDExLjkzNjksMi44MDc5YTYuMDQ4MzgsNi4wNDgzOCwwLDAsMSwyLjY2OTgyLjE2MDQ2LDMuNjI5NTUsMy42Mjk1NSwwLDAsMSwxLjcyNzEyLDEuMTUxMjMsMy42NjY2NywzLjY2NjY3LDAsMCwxLC43NzAxLDIuMTA4NTMsOC4xNDA3Miw4LjE0MDcyLDAsMCwxLS4wNTE0MSwxLjQzNDc4LDYuNDQyMTQsNi40NDIxNCwwLDAsMS0xLjE5NDI3LDMuMzAzNTlBMi4yNzk1MiwyLjI3OTUyLDAsMCwxLDE0LjEzNjkyLDExLjk4OGExLjUwMDg3LDEuNTAwODcsMCwwLDEtLjk5Mjg3LS4yNjYsMS4xODA2OCwxLjE4MDY4LDAsMCwxLS40OS0uNzIyLDIuMjI4NTIsMi4yMjg1MiwwLDAsMSwuMTIzNDUtMS4wOTUxNWwuMDE3MTUtLjA2MTM0Yy4wOTMxMS0uMzM3NTMuMTkwMTEtLjY0NTgyLjI4NTUyLS45NDkyOC4xNS0uNDc4MTMuMzA1MzgtLjk3MjYyLjQzMzUzLTEuNTQ2YTMuNTM1MjMsMy41MzUyMywwLDAsMCwuMDU5MjMtMS41OTc2NSwxLjgwMTUsMS44MDE1LDAsMCwwLS44NDc2LTEuMTgxNDJBMi4wNzQ4OSwyLjA3NDg5LDAsMCwwLDExLjA3MjU0LDQuNDM4LDIuNzgzODUsMi43ODM4NSwwLDAsMCw5LjM3MTg2LDYuNDYyMjJhNC4zODUsNC4zODUsMCwwLDAtLjExNjgzLDEuNTk4LDQuOTgxNzIsNC45ODE3MiwwLDAsMCwuMzE4NjIsMS4yOTAzMmwtLjAxODcxLjA2MjdjLS4wMTI4NC4wNDIwOC0uMDI0NTIuMDgyNTctLjAzMzEuMTE3NDctLjE5MTI1Ljc5NzU1LS4zNzcwNiwxLjU4NDE2LS41NjI0NiwyLjM2OTQ3LS4xNzYwNS43NDU1My0uMzUyMTIsMS40ODk5MS0uNTMyMDksMi4yNDE3bC0uMDQwNTMuMTY4NDlBMTIuNzk1LDEyLjc5NSwwLDAsMCw3Ljk2ODQzLDE2LjgxNGwtLjAxOTg3LjM5NWExMS43MDI2MSwxMS43MDI2MSwwLDAsMCwuMDE5ODcsMi4xOTcyOC42MTUxMS42MTUxMSwwLDAsMCwuMzY1MzcuNTUyMTYuNDMwMTMuNDMwMTMsMCwwLDAsLjI2MjEzLjA5NjQxYy4yNTMyMiwwLC40Nzg3My0uMjU3MjguNjcwMzktLjQ3NTQyYTkuNjg3ODIsOS42ODc4MiwwLDAsMCwxLjYyNzA1LTIuNzQ2MzIsMTEuNjc5MiwxMS42NzkyLDAsMCwwLC40ODMzOS0xLjU4MzgxbC4wODEtLjMxNTE1Yy4wOTgxNS0uMzc2NjYuMTk0MzYtLjc1ODM4LjI4OTQxLTEuMTM2bC4wMDYyNi0uMDI1MTNhMy40MzgsMy40MzgsMCwwLDAsLjYxNzM4LjQyMzgsMy45ODU3NiwzLjk4NTc2LDAsMCwwLDEuNjc4MDYuNDc5NjksNS4zMzI4MSw1LjMzMjgxLDAsMCwwLDEuODQ2MzYtLjIyNjEyLDUuNDQyNTgsNS40NDI1OCwwLDAsMCwxLjQ0Mjc5LS42NTI2NEE3LjM0Njc1LDcuMzQ2NzUsMCwwLDAsMjAuNDQxNzksOC42OTc5YTEwLjIyMzIsMTAuMjIzMiwwLDAsMCwuMTY0MzgtMS44MDk3M0E2LjUyNjA2LDYuNTI2MDYsMCwwLDAsMjAuMzYyNyw1LjAzNDYxWm0tLjcwNywzLjUyODg3QTYuNTY1ODksNi41NjU4OSwwLDAsMSwxNi45MDgsMTMuMTI1OGE0LjY0ODg1LDQuNjQ4ODUsMCwwLDEtMS4yMzI0NC41NTc2Miw0LjU0NDEsNC41NDQxLDAsMCwxLTEuNTcyNTIuMTk3MjgsMy4xNTUxMiwzLjE1NTEyLDAsMCwxLTEuMzQ3NzUtLjM4Mjg4LDIuMDU0NTEsMi4wNTQ1MSwwLDAsMS0uODUxNTItLjc3OTYzbC0uNDg5MjYtLjg0NDctLjQ0MDkxLDEuNzI5ODhjLS4wOTQ2Ni4zNzU1LS4xOTAxMS43NTQ5LS4yODc4NywxLjEyOTYxbC0uMDgxODEuMzE5ODFBMTAuOTEwNzQsMTAuOTEwNzQsMCwwLDEsMTAuMTU2LDE2LjUyODVhOS4wMzcxNSw5LjAzNzE1LDAsMCwxLTEuNDMxNTEsMi40NTgxLDEzLjc1NzkxLDEzLjc1NzkxLDAsMCwxLC4wMjA2Ni0xLjczNTc0bC4wMjAyMy0uMzk5NjNhMTIuMTQwNTYsMTIuMTQwNTYsMCwwLDEsLjM5Ny0yLjM1NDMxbC4wNDA4OS0uMTY5NDRjLjE4LS43NTIzNS4zNTYtMS40OTc3My41MzI0OS0yLjI0Mzg2LjE4NTQtLjc4NDUxLjM3MDc5LTEuNTcwMTcuNTYxNy0yLjM2Ni4wMDU0Mi0uMDIyNDIuMDEzNjEtLjA0ODcuMDIxNzctLjA3NjE1YS43MzMxNS43MzMxNSwwLDAsMCwuMDMwNC0uNDk1ODcsNC4zMjgzMyw0LjMyODMzLDAsMCwxLS4zMDE0Ny0xLjE2OTU0LDMuNTg5MTgsMy41ODkxOCwwLDAsMSwuMDk1LTEuMzA5LDIuMDA4NzksMi4wMDg3OSwwLDAsMSwxLjE4ODA5LTEuNDc0MzYsMS4zMDE4OSwxLjMwMTg5LDAsMCwxLC40MjEtLjA2NzYxLDEuMTg0MjUsMS4xODQyNSwwLDAsMSwuNTcwNjcuMTMyODIsMS4wMTgyOCwxLjAxODI4LDAsMCwxLC40NzQ4MS42ODIwOCwyLjgzNywyLjgzNywwLDAsMS0uMDYyMywxLjIzNGMtLjEyMTE0LjU0MDQ4LS4yNjQ0OS45OTczOS0uNDE2NDMsMS40ODExOC0uMDk4MTYuMzExODQtLjE5NzQ4LjYyODctLjI5MzI5Ljk3NTc2bC0uMDE2NzUuMDYwNTlBMi45MDM2OCwyLjkwMzY4LDAsMCwwLDExLjg3ODEsMTEuMTg1YTEuOTYzMDYsMS45NjMwNiwwLDAsMCwuODAyLDEuMTg2MSwyLjMzOTUsMi4zMzk1LDAsMCwwLDEuNDgzNjkuNDE0MjYsMy4wNjQwNiwzLjA2NDA2LDAsMCwwLDIuMzIyLTEuMzI2MzMsNy4yMTU4Nyw3LjIxNTg3LDAsMCwwLDEuMzU5ODQtMy43MDc0OSw4Ljk1NTc3LDguOTU1NzcsMCwwLDAsLjA1NDUyLTEuNTc4MzQsNC40NTAzMiw0LjQ1MDMyLDAsMCwwLS45NDY1My0yLjU1NjA2LDQuNDIyODIsNC40MjI4MiwwLDAsMC0yLjEwMzQ1LTEuNDA4MzRBNi44NzcyNSw2Ljg3NzI1LDAsMCwwLDExLjgwNDg3LDIuMDIxLDUuNDQyMTUsNS40NDIxNSwwLDAsMCw3Ljc3NDA1LDQuODY3NDgsNS42MzA1OSw1LjYzMDU5LDAsMCwwLDcuMDg3NzIsNy42MDksMy42NzU1LDMuNjc1NSwwLDAsMCw3LjY3Mjc4LDkuNzAxOWEyLjIxODc3LDIuMjE4NzcsMCwwLDAsLjE4MzQ0LjIyOSwxLjMyNDY0LDEuMzI0NjQsMCwwLDEsLjE1LjE5MTA2LDEuMTM2NjUsMS4xMzY2NSwwLDAsMS0uMDc4NjUuMzk4MDdjLS4wMTg3MS4wNjEtLjAzNjYyLjExOTU5LS4wNTEwNi4xNzQzMS0uMDE2NzUuMDYzNy0uMDMxMTUuMTMxODctLjA0NTU1LjIwMDY0YTEuODg1NTEsMS44ODU1MSwwLDAsMS0uMDY0NjYuMjU0NzIsMS45NzM4MywxLjk3MzgzLDAsMCwxLS4zNjA3LS4yMDEyQTMuNDAxNjcsMy40MDE2NywwLDAsMSw2LjA2Niw5LjIwMDc2YTUuNzkyMjMsNS43OTIyMywwLDAsMS0uMjctMi42MTQ5LDkuMDU0OTIsOS4wNTQ5MiwwLDAsMSwuNzI1MzEtMi4xNjA2OUE2LjUzOSw2LjUzOSwwLDAsMSw5LjAxLDEuOTEyLDcuNzIzMiw3LjcyMzIsMCwwLDEsMTEuODQ1NzUuOTU0MzNjLjM3NjMtLjA1NDUzLjc3NTE3LS4wNzU3OSwxLjE4NDkzLS4wOTQ0NWE3LjA4ODU3LDcuMDg4NTcsMCwwLDEsMy4xMTg5Mi41NzE2Miw2LjM2Mzc4LDYuMzYzNzgsMCwwLDEsMi4xNDA4MywxLjUxMjMzQTUuNjcwMzksNS42NzAzOSwwLDAsMSwxOS41OTc3LDUuMjYxNDlhNS43MzYyNyw1LjczNjI3LDAsMCwxLC4yMTA3MiwxLjYyNjY4QTkuNDg1ODIsOS40ODU4MiwwLDAsMSwxOS42NTU3NCw4LjU2MzQ4WiIvPjwvc3ZnPg=="
+            class="Icon svg SocialMedia__image Icon--pinterest" alt="Our Pinterest" width="24" height="19"
+            aria-label="Our Pinterest">
+    </div>
+    
+    
+    <div class="bg-[#340c0c] w-screen h-auto p-5 flex justify-center items-center gap-12">
+        <div class="font">
+            <img class="pl-5"
+                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjkiIGhlaWdodD0iMjMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgIDxwYXRoIHN0cm9rZT0iI0ZGRiIgZmlsbD0iIzNBMDgwQSIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik0yOCAxMi41NjF2Ni41NDJoLTguNjM2VjYuMTVoNC4zMTgiLz4KICAgIDxnIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgIDxwYXRoIGZpbGw9IiMzQTA4MEEiIGQ9Ik0uNzg1IDE4LjA1Ni42NTQuNjU0aDE5Ljg4OGwuMTMxIDE3LjQwMmgtLjEzMXoiLz4KICAgICAgPHBhdGggZD0iTTE5Ljg4OCAxLjMwOHYxNi4wOTRIMS40MzlWMS4zMDhoMTguNDQ5TTIwLjU0MiAwSC43ODVDLjM5MyAwIDAgLjI2MiAwIC42NTR2MTcuNDAyYzAgLjM5My4zOTMuNjU0Ljc4NS42NTRoMTkuODg4Yy4zOTIgMCAuNzg1LS4yNjEuNzg1LS42NTRWLjY1NEMyMS4zMjguMjYyIDIxLjA2NSAwIDIwLjU0MiAwWiIgZmlsbD0iI0ZGRiIvPgogICAgPC9nPgogICAgPHBhdGggc3Ryb2tlPSIjRkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik0yMy42ODIgNi4xNSAyOCAxMi41NjEiLz4KICAgIDxnIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgIDxwYXRoIGQ9Ik02LjI4IDIxLjk4MWMtMS40MzkgMC0yLjYxNi0xLjE3Ny0yLjYxNi0yLjQ4NiAwLTEuNDM5IDEuMTc3LTIuNDg2IDIuNjE2LTIuNDg2IDEuNDQgMCAyLjYxNyAxLjE3OCAyLjYxNyAyLjQ4NiAwIDEuMzA5LTEuMTc3IDIuNDg2LTIuNjE3IDIuNDg2WiIgZmlsbD0iIzNBMDgwQSIvPgogICAgICA8cGF0aCBkPSJNNi4yOCAxNy41MzNjLjUyNCAwIC45MTYuMjYxIDEuMzA5LjUyMy4zOTIuMzkzLjUyMy43ODUuNTIzIDEuMzA4IDAgMS4wNDctLjkxNiAxLjgzMi0xLjgzMiAxLjgzMnMtMS44MzEtLjc4NS0xLjgzMS0xLjgzMmMwLS41MjMuMTMtLjkxNS4zOTItMS4xNzcuMzkzLS4zOTMuOTE2LS42NTQgMS40NC0uNjU0bTAtMS4zMDljLTEuMzA5IDAtMi4zNTYuNzg1LTIuODggMS44MzItLjEzLjM5My0uMjYuOTE2LS4yNiAxLjMwOGEzLjI0IDMuMjQgMCAwIDAgMy4yNyAzLjI3MiAzLjI0IDMuMjQgMCAwIDAgMy4yNzEtMy4yNzJjMC0xLjgzMS0xLjU3LTMuMTQtMy40MDItMy4xNFoiIGZpbGw9IiNGRkYiLz4KICAgIDwvZz4KICAgIDxwYXRoIHN0cm9rZT0iI0ZGRiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJtMjIuODk3IDkuMjkgMi43NDggNC41NzlNMjMuMDI4IDE0aDIuNjE3Ii8+CiAgICA8cGF0aCBzdHJva2U9IiNGRkYiIHN0cm9rZS13aWR0aD0iLjc1IiBkPSJNMTAuNzI5IDE4LjA1NlYuNjU0Ii8+CiAgICA8cGF0aCBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Im0xMi44MjIgOS4xNTktMi4wOTMgMy43OTQtMi4wOTMtMy43OTQgMi4wOTMtMy40MDJ6Ii8+CiAgICA8ZyBmaWxsLXJ1bGU9Im5vbnplcm8iPgogICAgICA8cGF0aCBkPSJNMjEuMzI3IDIxLjg1Yy0xLjQ0IDAtMi42MTctMS4xNzctMi42MTctMi40ODYgMC0xLjMwOCAxLjE3OC0yLjQ4NSAyLjYxNy0yLjQ4NSAxLjQ0IDAgMi42MTcgMS4xNzcgMi42MTcgMi40ODUgMCAxLjMwOS0xLjE3OCAyLjQ4Ni0yLjYxNyAyLjQ4NloiIGZpbGw9IiMzQTA4MEEiLz4KICAgICAgPHBhdGggZD0iTTIxLjMyNyAxNy40MDJjLjUyMyAwIC45MTYuMjYyIDEuMzA5LjUyMy4zOTIuMzkzLjUyMy43ODUuNTIzIDEuMzA5IDAgMS4wNDYtLjkxNiAxLjgzMS0xLjgzMiAxLjgzMXMtMS44MzItLjY1NC0xLjgzMi0xLjdjMC0uNTI0LjEzMS0uOTE2LjM5My0xLjE3OC4zOTItLjUyMy45MTYtLjc4NSAxLjQ0LS43ODVtMC0xLjMwOWMtMS4zMSAwLTIuMzU2Ljc4Ni0yLjg4IDEuODMyLS4yNjEuMzkzLS4yNjEuOTE2LS4yNjEgMS40NGEzLjI0IDMuMjQgMCAwIDAgMy4yNyAzLjI3IDMuMjQgMy4yNCAwIDAgMCAzLjI3Mi0zLjI3YzAtMS44MzItMS41Ny0zLjI3Mi0zLjQwMi0zLjI3MloiIGZpbGw9IiNGRkYiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo="
+                class="Icon svg Icon--deliverylight" alt="DeliveryLight">
+            <p class="text-gray-100">FREE DELIVERY & <br> RETURNS</p>
+            <p class="text-gray-100 text-xs">Spend €59 for FREE Standard <br> Delivery</p>
+        </div>
+        <div class="font">
+            <img class="pl-5"
+                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMjkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGcgc3Ryb2tlPSIjRkZGIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgPHBhdGggZmlsbD0iIzM0MEMwQyIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNMTkuMjM5IDIxLjQyMiA2LjEzOCAyNC42MzMgMSA0LjIxMSAxNC4xMDEgMXoiLz4KICAgIDxwYXRoIHN0cm9rZS13aWR0aD0iLjc1IiBkPSJNMTIuODE3IDIzLjM0OSA3LjY3OSAzLjA1NSIvPgogICAgPHBhdGggc3Ryb2tlLXdpZHRoPSIuNzUiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0ibTExLjkxNyAxMi4xNzQtMS4wMjcgMy40NjgtMi40NC0yLjY5NyAxLjAyNy0zLjA4M3oiLz4KICAgIDxwYXRoIGZpbGw9IiMzNDBDMEMiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0ibTI1LjAxOCAyNy44NDQtMTMuMjI5LTIuNTY5IDMuOTgyLTIwLjU1TDI5IDcuMTY1eiIvPgogICAgPHBhdGggc3Ryb2tlLXdpZHRoPSIuNzUiIGQ9Im0xOC4yMTEgMjYuNTYgMy45ODItMjAuNTUxIi8+CiAgICA8cGF0aCBzdHJva2Utd2lkdGg9Ii43NSIgZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJtMjEuOTM2IDE2LjY3LTIuMzEyIDIuODI1LTEuMTU2LTMuNDY3IDIuMzEyLTIuNDQxeiIvPgogIDwvZz4KPC9zdmc+Cg=="
+                class="Icon svg Icon--sampleslight" alt="SamplesLight">
+            <p class="text-gray-100">CHOOSE 2 FREE <br> SAMPLES</p>
+            <p class=" text-gray-100 text-xs">At checkout</p>
+        </div>
+        <div class="font">
+            <img class="w-[30px] ml-5"
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOCAxNyI+CiAgPGc+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMSAxKSI+CiAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTEpIj4KICAgICAgICA8cGF0aCBmaWxsPSIjRkZGIgogICAgICAgICAgICAgIGQ9Ik0xMC42IDIuNGMxLTEuNSAyLjQtMiAzLjQtLjkgMSAxIC42IDIuNS0uOSAzLjQtLjkuNi0xLjkuOS0yLjkuOWgtLjV2LS41YzAtMSAuMy0yIC45LTIuOXptMiAxLjZjMS0uNiAxLjItMS40LjctMS45cy0xLjItLjMtMS45LjhjLS40LjYtLjYgMS4yLS43IDEuOC43LS4xIDEuMy0uMyAxLjktLjd6Ii8+CiAgICAgICAgPHBhdGggZmlsbD0iI0ZGRiIKICAgICAgICAgICAgICBkPSJNNS43IDEuNWMxLTEgMi41LS42IDMuNC45LjYuOS45IDEuOS45IDIuOXYuNWgtLjVjLTEgMC0yLS4zLTIuOS0uOS0xLjUtMS0xLjktMi40LS45LTMuNHptMi42IDEuNGMtLjYtMS0xLjQtMS4yLTEuOS0uN3MtLjMgMS4yLjggMS44Yy42LjQgMS4yLjcgMS44LjgtLjItLjctLjQtMS4zLS43LTEuOXoiLz4KICAgICAgICA8cGF0aCBmaWxsPSIjRkZGIgogICAgICAgICAgICAgIGQ9Ik0xNyAxNlY5aDFWNkgydjNoMXY3aDE0ek0yIDl2MUMuOSAxMCAxIDkgMSA5VjUuOUMxIDUgMiA1IDIgNWgxNnMxLS4xIDEgLjlWOXMuMSAxLTEgMVY5djcuMWMwIC41LS40LjktMSAuOUgzYy0uNiAwLTEtLjQtMS0uOVY5eiIvPgogICAgICAgIDxwYXRoIGZpbGwtb3BhY2l0eT0iLjYiIGZpbGw9IiNGRkYiCiAgICAgICAgICAgICAgZD0iTTUgMTB2NGgxMHYtNEg1em0wLTFoMTBjLjYgMCAxIC4zIDEgMXY0YzAgLjctLjQgMS0xIDFINWMtLjYgMC0xLS4zLTEtMXYtNGMwLS43LjQtMSAxLTF6Ii8+CiAgICAgICAgPHBhdGggZmlsbC1vcGFjaXR5PSIuNiIgZmlsbD0iI0ZGRiIKICAgICAgICAgICAgICBkPSJNMyA3LjVjMC0uMy4yLS41LjUtLjVoMTNjLjMgMCAuNS4yLjUuNXMtLjIuNS0uNS41aC0xM2MtLjMgMC0uNS0uMi0uNS0uNXoiLz4KICAgICAgPC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg=="
+                class="Icon svg Icon--giftlight" alt="GiftLight">
+            <p class="text-gray-100">REFER YOUR <br> FABULOUS FRIENDS</p>
+            <p class="text-gray-100 text-xs">For €20 off their next order <br> over €100!</p>
+        </div>
+    </div>
+    
+    <div class="flex justify-center items-center py-3">
+        <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNC4wNSAxMC4yMSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMzNDBDMEM7fTwvc3R5bGU+PC9kZWZzPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEyLjU2LDUuODdsLjg0LDBhNy4zNSw3LjM1LDAsMCwwLTEuNzMtMkE3LjI0LDcuMjQsMCwwLDAsNS45MywyLjMxYTcuMTksNy4xOSwwLDAsMSw0LjkzLDEuNiw3LjMyLDcuMzIsMCwwLDEsMS43LDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjAzIC0yLjIxKSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMuODIsMTAuMjQsMywxMC41MWE3LjIxLDcuMjEsMCwwLDAsOC4xOCwxLjEzQTcuMTgsNy4xOCwwLDAsMSw2LDExLjZhNyw3LDAsMCwxLTIuMjEtMS4zNiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTAuMDMgLTIuMjEpIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNy4wNSw0LjYzYTEuODcsMS44NywwLDAsMSwuOTIsMHMuOCwwLDIuMjUsMS4zM2MuNDMuNDIuNjcsMS4xLjksMS4xNnMxLjEzLjExLDEuMTkuNDgtLjU5LjkzLTEuMzcuODljLjE0LS4yMS41OS0uMjYuOC0uODFhMS4zMiwxLjMyLDAsMCwwLTEtLjA2QTUuNDIsNS40MiwwLDAsMCw3LjQ0LDQuODlhNy4xMiw3LjEyLDAsMCwwLTEuMTQsMCw2LjI0LDYuMjQsMCwwLDEsLjc1LS4yNiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTAuMDMgLTIuMjEpIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNC41OSwyLjczYTEsMSwwLDAsMSwuNjMuMTdMNC41OSwzYTEuNzksMS43OSwwLDAsMC0xLC43OWMuMTMuMTEuMTIuMTQuMjYuMTRzLjc1LS43LDEuNjctLjdhMS4wNywxLjA3LDAsMCwxLC4zMy4wNmMuMS4wNi4wNi4xNS4wNi4yOFM1LjI3LDQuODksNC4yNCw0Ljg5SDRBMi41OSwyLjU5LDAsMCwwLDUuNDksMy41NGwtLjY4LjJjLS40Ny4xNC0xLC41OC0xLjE4LjU3cy0uMzQtLjE3LS44OC0uMTdhMi4zLDIuMywwLDAsMC0xLjE0LjM5Yy4xMS4yMi4zMi4xMi41LjExLDAsMC0uMDYuMi0uNTguMjVhMS42LDEuNiwwLDAsMCwuMzguNzIsMS44LDEuOCwwLDAsMCwxLC41LDEuNzMsMS43MywwLDAsMCwuMjIuNzFjLjgxLDEuNTcsMS4yNS4yNywyLjIzLDEuODR2LjE4YTMuNzgsMy43OCwwLDAsMC0xLjgtLjY3LDUuMTMsNS4xMywwLDAsMC0xLjMyLDBjLS4yMy4wNi0uODQuMTgtLjg0LjE4LjQ5LS41OSwxLjY2LS42MSwxLjg3LS43YTIuMzQsMi4zNCwwLDAsMS0uNzYtMS4xNEExLjY0LDEuNjQsMCwwLDEsMS4zMSw0Ljc1YzAtLjU1LDEtMSwxLjQtMSwuNjIsMCwuODQtMSwxLjg4LTEuMDYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjAzIC0yLjIxKSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIuOTMsNC4zNmEuNDMuNDMsMCwwLDEsLjMxLjA2di4xOWMtLjIsMC0uNDcsMC0uNzYsMGEuNjYuNjYsMCwwLDEsLjQ0LS4yMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTAuMDMgLTIuMjEpIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMSw2LjQ0YTIuMjIsMi4yMiwwLDAsMSwxLC40MWMtLjI5LDAtLjMzLDAtMSwwQTguMTUsOC4xNSwwLDAsMCwwLDdjLjMxLS40Mi4yNS0uNTYsMS0uNTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjAzIC0yLjIxKSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTkuNDcsOS40OWwuNzMuMzVjLjg2LjQxLDEuNjctLjY4LDItLjg4LjEzLjcuODIsMi4xLDEuOCwyLjM2LS4xNC4xNi0uMy4xNC0uNDkuMTVhMS44MiwxLjgyLDAsMCwxLTEuMzgtMS4zOHMwLS40NSwwLS41NWExLjU3LDEuNTcsMCwwLDEtMS4zLjg2LDEuMzEsMS4zMSwwLDAsMS0uNzYtLjE2Yy0uMDcsMC0xLjc5LTEuMDktMS44OC0xLjgzQTksOSwwLDAsMCw5LjQ3LDkuNDkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjAzIC0yLjIxKSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEyLjUyLDExLjkxbC0uMjgsMGMtLjY5LS4xMS0uODItMS4xMi0uNjItMS40YTEuNTcsMS41NywwLDAsMSwuMjItLjMsNS4wNyw1LjA3LDAsMCwwLC4xMSwxYy4xMy4yOC0uMDguMTYuNTcuNjYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjAzIC0yLjIxKSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMuMDksOS42NWE0LjM4LDQuMzgsMCwwLDAsLjU4LS4yM2wtLjU5LS4xNmMwLS4yLDAtLjQxLS4wNS0uNmwtLjMzLjUxTDIuMSw5Yy4xMy4xNi4yNi4zMS4zOC40Ny0uMDkuMTgtLjIzLjM0LS4zMi41MmwuNTYtLjIxLjQxLjQ1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC4wMyAtMi4yMSkiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMy42LDdhNC45MSw0LjkxLDAsMCwwLC40OC0uNDFsLS42MiwwYy0uMDgtLjE4LS4xNS0uMzgtLjIzLS41NWwtLjE1LjU4LS42MiwwLC41MS4zM2MwLC4yLS4xMS4zOS0uMTQuNTlsLjQ3LS4zOC41Mi4zMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTAuMDMgLTIuMjEpIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTMuMzIsMi40MWgtLjE0VjIuMzRoLjM0di4wN2gtLjEzdi4zNWgtLjA3VjIuNDFtLjI1LS4wN2guMWwuMTEuMzQuMS0uMzRIMTR2LjQyaC0uMDZWMi40MWwtLjExLjM1aC0uMDZsLS4xMi0uMzV2LjM1aC0uMDZaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC4wMyAtMi4yMSkiLz48L3N2Zz4="
+            class="Icon svg Icon--leapingbunny w-8 h-8 mx-2" alt="">
+        <span class="text-xs">Leaping Bunny Approved</span>
+    </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
+
+    <script src="./content/js/script.js"></script>
+</body>
+</html>
+
